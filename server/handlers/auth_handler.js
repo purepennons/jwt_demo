@@ -1,17 +1,10 @@
 const errCode = require('../../constants/error_code')
 const jwt = require('../../lib/auth')
 
-const dummy_users = [
-    {
-        id: 1,
-        username: 'akiya',
-        password: 'abc123'
-    }
-]
-
 exports.login = async (ctx, next) => {
     const db = ctx.db
     const secret_str = ctx.secret_str
+    const dummy_users = ctx.dummy_users
 
     const { username, password } = ctx.headers
     if (!username || !password) throw errCode.getError('ErrorCodeParameterInvalid')
@@ -28,8 +21,9 @@ exports.login = async (ctx, next) => {
     const token = jwt.sign(user_info, secret_str, 'hs256', {timeout: 300})
 
     // response
+    ctx.cookies.set('id', user_info['user_id'], { httpOnly: true })
     ctx.cookies.set('token', token, { httpOnly: true })
-    ctx.body = { token }
+    ctx.body = Object.assign({}, user_info, { token })
     
     await next()
 }

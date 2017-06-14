@@ -21,6 +21,13 @@ module.exports = async (ops, db) => {
     app.context.ops = ops
     app.context.db = db
     app.context.secret_str = 'Facebook is the future [By Roth Peng]'
+    app.context.dummy_users = [
+        {
+            id: 1,
+            username: 'akiya',
+            password: 'abc123'
+        }
+    ]
     
     // middlewares
     app.use(logger())

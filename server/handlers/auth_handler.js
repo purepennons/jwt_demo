@@ -26,9 +26,10 @@ exports.login = async (ctx, next) => {
     }
 
     const token = jwt.sign(user_info, secret_str, 'hs256', {timeout: 300})
-    ctx.body = {
-        token
-    }
+
+    // response
+    ctx.cookies.set('token', token, { httpOnly: true })
+    ctx.body = { token }
     
     await next()
 }

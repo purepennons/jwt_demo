@@ -20,6 +20,7 @@ module.exports = async (ops, db) => {
     // shared context
     app.context.ops = ops
     app.context.db = db
+    app.context.secret_str = 'Facebook is the future [By Roth Peng]'
     
     // middlewares
     app.use(logger())

@@ -31,7 +31,7 @@ const init = async () => {
         db_config.password = process.env.DB_PASSWD || db_config.password
     }
 
-    koa_config.port = process.env.PORT || koa_config.port || 9501
+    koa_config.port = process.env.PORT || koa_config.port || 3000
 
     try {
         // start to init services

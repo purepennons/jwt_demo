@@ -1,0 +1,29 @@
+{
+    "test": {
+        "db": {
+            "dialect": "sqlite",
+            "storage": ":memory:"
+        },
+        "koa": {
+            "port": 3000
+        }
+    },
+    "development": {
+        "db": {
+            "dialect": "sqlite",
+            "storage": "./db.development.sqlite"
+        },
+        "koa": {
+            "port": 3000
+        }
+    },
+    "production": {
+        "db": {
+            "dialect": "sqlite",
+            "storage": "./db.production.sqlite"
+        },
+        "koa": {
+            "port": 3000
+        }
+    }
+}

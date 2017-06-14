@@ -1,0 +1,45 @@
+{
+  "name": "koa-template",
+  "version": "0.0.1",
+  "description": "koa template",
+  "main": "./bin/boot.js",
+  "scripts": {
+    "test": "ava --timeout=30s",
+    "test-cover": "nyc ava --timeout=30s",
+    "test-watch": "ava --timeout=30s --watch",
+    "start": "node -r dotenv/config ./bin/boot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "purepennons (Chiahao Lin)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "debug": "^2.6.3",
+    "dotenv": "^4.0.0",
+    "fs-extra": "^2.1.2",
+    "http-status": "^1.0.1",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-json": "^2.0.2",
+    "koa-log4": "^2.2.0",
+    "koa-logger": "^3.0.0",
+    "koa-router": "^7.2.0",
+    "koa-static": "^3.0.0",
+    "sequelize": "^3.30.4",
+    "sequelize-cli": "^2.7.0",
+    "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {
+    "ava": "^0.19.0",
+    "nyc": "^10.2.0"
+  }
+}

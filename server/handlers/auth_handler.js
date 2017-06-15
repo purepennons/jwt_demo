@@ -18,14 +18,20 @@ exports.login = async (ctx, next) => {
         username: matched_user['username']
     }
 
-    const token = jwt.sign(user_info, secret_str, 'hs256', {timeout: 300})
+    try {
+        const token = jwt.sign(user_info, secret_str, 'hs256', { timeout: 300 })
+        
+        // response
+        ctx.cookies.set('id', user_info['user_id'], { httpOnly: true })
+        ctx.cookies.set('token', token, { httpOnly: true })
+        ctx.body = Object.assign({}, user_info, { token })
 
-    // response
-    ctx.cookies.set('id', user_info['user_id'], { httpOnly: true })
-    ctx.cookies.set('token', token, { httpOnly: true })
-    ctx.body = Object.assign({}, user_info, { token })
-    
-    await next()
+        await next()
+    } catch (err) {
+        if (err.code) throw err
+        throw errCode.getError('ErrorCodeInternalServer')
+    }
+
 }
 
 exports.logout = async (ctx, next) => {

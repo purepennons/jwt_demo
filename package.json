@@ -28,6 +28,7 @@
     "dotenv": "^4.0.0",
     "fs-extra": "^2.1.2",
     "http-status": "^1.0.1",
+    "kcors": "^2.2.1",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
     "koa-json": "^2.0.2",

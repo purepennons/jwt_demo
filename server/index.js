@@ -1,5 +1,6 @@
 const log = require('log4js').getLogger('app:koa')
 const Koa = require('koa')
+const cors = require('kcors')
 const static = require('koa-static')
 const bodyParser = require('koa-bodyparser')
 const logger = require('koa-logger')
@@ -31,6 +32,7 @@ module.exports = async (ops, db) => {
     
     // middlewares
     app.use(logger())
+    app.use(cors())
     app.use(bodyParser())
     app.use(prettyJSON( { pretty: false, param: 'pretty' } ))
     app.use(static('./public'))

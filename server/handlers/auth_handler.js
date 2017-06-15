@@ -22,8 +22,8 @@ exports.login = async (ctx, next) => {
         const token = jwt.sign(user_info, secret_str, 'hs256', { timeout: 300 })
         
         // response
-        ctx.cookies.set('id', user_info['user_id'], { httpOnly: true })
-        ctx.cookies.set('token', token, { httpOnly: true })
+        // ctx.cookies.set('id', user_info['user_id'], { httpOnly: true })
+        // ctx.cookies.set('token', token, { httpOnly: true })
         ctx.body = Object.assign({}, user_info, { token })
 
         await next()

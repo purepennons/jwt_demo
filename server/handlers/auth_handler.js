@@ -6,7 +6,7 @@ exports.login = async (ctx, next) => {
     const secret_str = ctx.secret_str
     const dummy_users = ctx.dummy_users
 
-    const { username, password } = ctx.headers
+    const { username, password } = ctx.request.body
     if (!username || !password) throw errCode.getError('ErrorCodeParameterInvalid')
     
     // check authentication

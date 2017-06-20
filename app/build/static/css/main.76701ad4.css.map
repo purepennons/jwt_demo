@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles/TodoList.css"],"names":[],"mappings":"AAAA,qBACI,UAAY","file":"static/css/main.76701ad4.css","sourcesContent":[".todo-list ul button {\n    margin: 5px;\n}\n\n\n// WEBPACK FOOTER //\n// ./src/styles/TodoList.css"],"sourceRoot":""}

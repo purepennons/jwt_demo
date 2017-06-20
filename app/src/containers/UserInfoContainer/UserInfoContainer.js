@@ -4,14 +4,6 @@ import ReactComponent from '../../components/UserInfo/'
 import {} from '../../actions/'
 
 export default connect(
-    state => { 
-        console.log(Object.keys(state))
-        return {
-            userInfo: {
-                id: '',
-                username: ''
-            }
-        }
-    },
+    state => ({ auth: state.auth}),
     dispatch => ({})
 )(ReactComponent)

@@ -6,16 +6,15 @@ import ReactComponent from '../../components/Login/'
 import { loginAction } from '../../actions/'
 import { login } from '../../handlers/auth'
 
-class LoginContainer extends Component {
-    render() {
-        // const { auth } = this.props;
-        console.log('props', this.props)
-        debugger;
-        return (
-            <ReactComponent {...this.props} />
-        );
-    }
-}    
+// class LoginContainer extends Component {
+//     render() {
+//         // const { auth } = this.props;
+//         console.log('props', this.props)
+//         return (
+//             <ReactComponent {...this.props} />
+//         );
+//     }
+// }    
 
 export default connect(
     state => ({ auth: state.auth }),
@@ -51,4 +50,4 @@ export default connect(
             }
         }
     })
-)(LoginContainer)
+)(ReactComponent)

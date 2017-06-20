@@ -3,6 +3,7 @@ import { Redirect, push } from 'react-router'
 
 import { onTextChange } from '../../handlers/general'
 
+
 class ReactComponent extends Component {
     constructor(props) {
         super(props)
@@ -15,17 +16,17 @@ class ReactComponent extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps)
-        debugger;
+        console.log('nextProps', nextProps)
         // if (isLogin) {
         //     console.log(isLogin)
         //     this.setState({ isLogin });
         // }
     }
 
+
     render() {
         // console.log('state', this.props)
-        if (this.state.isLogin) {
+        if (this.props.auth.isLogin) {
             return (
                 <Redirect to="/profile"></Redirect>
             )

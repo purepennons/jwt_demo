@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "co": "^4.6.0",
     "debug": "^2.6.8",
     "history": "^4.6.2",
     "immutable": "^3.8.1",

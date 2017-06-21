@@ -40,6 +40,9 @@ class ReactComponent extends Component {
                         <input type="password" onChange={onTextChange.call(this, 'input_password')} value={this.state.input_password} />
                         <input type="submit" value="Login"/>
                     </form>
+                    <p>
+                        {JSON.stringify(this.props.auth.validation)}
+                    </p>
                 </div>
             )
         // }

@@ -26,11 +26,11 @@ class ReactComponent extends Component {
 
     render() {
         // console.log('state', this.props)
-        if (this.props.auth.isLogin) {
-            return (
-                <Redirect to="/profile"></Redirect>
-            )
-        } else {
+        // if (this.props.auth.isLogin) {
+        //     return (
+        //         <Redirect to="/profile" />
+        //     )
+        // } else {
             return (
                 <div>
                     <form onSubmit={this.props.onLogin(this.state.input_username, this.state.input_password)}>
@@ -42,7 +42,7 @@ class ReactComponent extends Component {
                     </form>
                 </div>
             )
-        }
+        // }
     }
 }
 

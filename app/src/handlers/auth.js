@@ -16,8 +16,9 @@ export const login = async ({ username, password }) => {
         })
 
         if (res.status !== 200) throw new Error('bad request')
-
-        return await res.json()
+        let json = await res.json()
+        if (json.code !== 2000000) throw new Error('Failed')
+        return json.data
     } catch (err) {
         console.error(err)
         throw err

@@ -12,7 +12,7 @@ const ReactComponent = ({ auth }) => {
         return (
             <div>
                 <h1>Hello, {userInfo.username}</h1>
-                <p>Your ID is {userInfo.id}</p>
+                <p>Your ID is {userInfo.user_id}</p>
             </div>
         )
     }
